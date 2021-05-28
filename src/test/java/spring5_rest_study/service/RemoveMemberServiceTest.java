@@ -20,14 +20,14 @@ import spring5_rest_study.dto.Member;
 @ContextConfiguration(classes = {ContextRoot.class} )
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 @WebAppConfiguration
-public class RegisterMemberServiceTest {
-	static final Log log = LogFactory.getLog(RegisterMemberServiceTest.class);
+public class RemoveMemberServiceTest {
+	static final Log log = LogFactory.getLog(RemoveMemberServiceTest.class);
 	
 	@Autowired
-	private RegisterMemberService service;
+	private RemoveMemberService service;
 	
 	@Autowired
-	private RemoveMemberService remService;
+	private RegisterMemberService regService;
 
 	@After
 	public void tearDown() throws Exception {
@@ -35,16 +35,15 @@ public class RegisterMemberServiceTest {
 	}
 
 	@Test
-	public void testRegisterMember() {
+	public void testRemoveMember() {
 		log.debug(Thread.currentThread().getStackTrace()[1].getMethodName() + "()");
 		
-		Member newMember = new Member("test20@test.co.kr", "1234", "test20");
+		Member delMember = new Member("test20@test.co.kr", "2222", "테스트20");
+		regService.registerMember(delMember);
 		
-		int res = service.registerMember(newMember);
+		int res = service.removeMember(delMember.getId());
 		Assert.assertEquals(1, res);
 		
 		log.debug("res > " + res);
-		
-		remService.removeMember(newMember.getId());
 	}
 }

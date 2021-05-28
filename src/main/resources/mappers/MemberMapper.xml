@@ -30,10 +30,13 @@
 		where id = #{id}
 	</select>
 	
-	<insert id="insertMember">
+	<insert id="insertMember" parameterType="Member">
 		insert into
 		member (email, password, name, regdate)
 		values (#{email}, #{password}, #{name}, now())
+		<selectKey keyProperty="id" resultType="Long">
+			SELECT LAST_INSERT_ID()
+		</selectKey>
 	</insert>
 	
 	<update id="updateMember">
@@ -43,8 +46,7 @@
 	</update>
 	
 	<delete id="deleteMember">
-		delete from member
-		<include refid="whereSQL"/>
+		delete from member where id = #{id}
 	</delete>
 
 </mapper>

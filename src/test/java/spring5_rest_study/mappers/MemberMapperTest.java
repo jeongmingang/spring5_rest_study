@@ -62,6 +62,9 @@ public class MemberMapperTest {
 		
 		int res = mapper.insertMember(newMember);
 		Assert.assertEquals(1, res);
+		log.debug("res id >>" + res);
+		
+		mapper.deleteMember(newMember.getId());
 	}
 	
 	@Test
@@ -69,9 +72,13 @@ public class MemberMapperTest {
 		log.debug(Thread.currentThread().getStackTrace()[1].getMethodName() + "()");
 		
 		Member upMember = new Member("test20@test.co.kr", "2222", "테스트20");
+		mapper.insertMember(upMember);
 		
+		upMember.setPassword("1111");
 		int res = mapper.updateMember(upMember);
 		Assert.assertEquals(1, res);
+		
+		mapper.deleteMember(upMember.getId());
 	}
 	
 	@Test
@@ -79,9 +86,9 @@ public class MemberMapperTest {
 		log.debug(Thread.currentThread().getStackTrace()[1].getMethodName() + "()");
 		
 		Member delMember = new Member("test20@test.co.kr", "2222", "테스트20");
+		mapper.insertMember(delMember);
 		
-		int res = mapper.deleteMember(delMember);
+		int res = mapper.deleteMember(delMember.getId());
 		Assert.assertEquals(1, res);
 	}
-
 }

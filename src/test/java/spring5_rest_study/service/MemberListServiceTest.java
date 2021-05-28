@@ -24,7 +24,7 @@ import spring5_rest_study.service.impl.MemberListServiceImpl;
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 @WebAppConfiguration
 public class MemberListServiceTest {
-	static final Log log = LogFactory.getLog(MemberListServiceImpl.class);
+	static final Log log = LogFactory.getLog(MemberListServiceTest.class);
 	
 	@Autowired
 	private MemberListService service;
