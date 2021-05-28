@@ -8,7 +8,7 @@ import spring5_rest_study.dto.Member;
 
 @Component
 public interface MemberMapper {
-	List<Member> selectMemberAll();	
+	List<Member> selectMemberByAll();	
 	int insertMember(Member member);
 	int updateMember(Member member);
 	int deleteMember(Member member);
