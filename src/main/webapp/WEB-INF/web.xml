@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
-  <display-name>spring5_webmvc_mybatis_study</display-name>
+  <display-name>spring5_rest_study</display-name>
   
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
@@ -23,7 +23,7 @@
 	<init-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>
-			spring5_webmvc_mybatis_study.config.ContextRoot
+			spring5_rest_study.config.ContextRoot
 		</param-value>
 	</init-param>
 	<load-on-startup>1</load-on-startup>
