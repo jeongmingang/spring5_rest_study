@@ -25,7 +25,7 @@ public class RegisterMemberServiceTest {
 	static final Log log = LogFactory.getLog(RegisterMemberServiceImpl.class);
 	
 	@Autowired
-	private RegisterMemberService service;
+	private RegisterMemberService regService;
 
 	@After
 	public void tearDown() throws Exception {
@@ -38,7 +38,7 @@ public class RegisterMemberServiceTest {
 		
 		Member newMember = new Member("test20@test.co.kr", "1234", "test20");
 		
-		int res = service.registerMember(newMember);
+		int res = regService.registerMember(newMember);
 		Assert.assertEquals(1, res);
 	}
 }
