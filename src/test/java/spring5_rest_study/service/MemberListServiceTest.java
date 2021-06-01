@@ -17,7 +17,6 @@ import org.springframework.test.context.web.WebAppConfiguration;
 
 import spring5_rest_study.config.ContextRoot;
 import spring5_rest_study.dto.Member;
-import spring5_rest_study.service.impl.MemberListServiceImpl;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = {ContextRoot.class} )
